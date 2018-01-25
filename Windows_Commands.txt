@@ -1,0 +1,11 @@
+# Mounting a WIM file (Windows Image File)
+C:\windows\system32>Dism /mount-image /imagefile:"C:\TESTIMAGE\OS10.wim" /mountdir:"C:\TESTMOUNT" /index:1
+
+# Un-mounting WIM file (either of the commit or discard options can be used)
+> dism /unmount-image /mountdir:"%MOUNT_DIR%" /commit
+
+C:\windows\system32>dism /unmount-image /mountdir:"C:\TESTMOUNT" /discard   (will discard the changes made to the mounted directory)
+C:\windows\system32>dism /unmount-image /mountdir:"C:\TESTMOUNT" /commit    (will preserve the changes made to the mounted directory)
+
+# Get Information of the mounted images
+C:\windows\system32>dism /get-mountedwiminfo
